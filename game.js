@@ -1,8 +1,9 @@
+var topics = ["ufo", "big foot", "domino"];
+makeButtons();
 function getGifs(subject) {
     let key = 'VeJdZVGeAvG7paHQ77sdFdyKWd3NmiBR';
     let queryURL = `https://api.giphy.com/v1/gifs/search?api_key=${key}&q=${subject}&limit=10`;
     let response = "";
-    console.log("armed w/ajax");
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -27,8 +28,6 @@ function makeButtons() {
 }
 
 
-var topics = ["ufo", "big foot", "domino"];
-makeButtons();
 $("#addPic").click(function () {
     $(".buttons").empty();
     topics.push($("#addimg").val());
